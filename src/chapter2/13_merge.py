@@ -15,7 +15,7 @@ def merge_txtfile(file_1: str, file_2: str):
     """
     with codecs.open(filename=file_1, mode='r', encoding='utf-8') as file1:
         with codecs.open(filename=file_2, mode='r', encoding='utf-8') as file2:
-            merge_list = ["{col1}\t{col2}".format(col1=str(col1).rstrip(), col2=col2) for col1, col2 in tuple(zip(file1, file2))]
+            merge_list = ["{col1}\t{col2}".format(col1=str(col1).rstrip(), col2=col2) for col1, col2 in zip(file1, file2)]
             with codecs.open(filename='new_file.txt', mode='w', encoding='utf-8') as newfile:
                 for row in merge_list:
                     newfile.write(str(row))
